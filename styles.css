@@ -5,40 +5,103 @@
   h1{
     text-align: center;
     position: relative;
+    margin-left: 30px;
+  }
+  h2{
+    text-align: center;
+    position: relative;
+    margin-left: 30px;
+    font-size:25px;
+    font-weight:bold;
   }
   html,body{
-    background-image: url("fundo.jpg");
+   /*background-image: url("fundo.jpg"); */
+    background-color: #1f1f1f;
     background-position: 50% 90%;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     height: 100%;
     letter-spacing: 1px;
+  } 
+  input.placeholder{
+    text-align: center;
   }
   input{
     display: block; 
     height: 55px;
-    width: 400px;
+    width: 300px;
     margin:10px;
     border-radius: 30px;
     border: 1px solid black;
-    font-size: 16pt;
+    font-size: 18pt;
     padding: 10px 20px;
-    background-color: rgba(255, 255, 255, 0.01);
-    color: white;
+    background-color: white;
+    color: black;
     outline: none;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align:center;
+    margin-left: 50px;
   }
-  div#corpo-form{
-    /*background-color: rgb(43, 43, 97);*/
-    width: 420px;
-    margin: 150px auto 0px auto;
+  a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  border-radius: 30px;
+  border: 1px solid black;
+  font-size: 16pt;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  width: 300px;
+  margin-left: 50px;
+  
+}
+
+a:hover, a:active {
+  background-color: red;
+}
+  select{
+    display: block; 
+    height: 80px;
+    width: 343px;
+    margin:10px;
+    border-radius: 30px;
+    border: 1px solid black;
+    font-size: 18pt;
+    padding: 10px 20px;
+    background-color:white;
+    /*background-color: rgba(255, 255, 255, 0.01); */
+    color: black;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align:center;/* para firefox */
+    text-align-last: center; /* para chrome */
+    margin-left:50px;
+  
+  }
+    label{display:block;
+      text-align:center;/* para firefox */
+      text-align-last: center; /* para chrome */
+      color: white;
+      font-size: 18pt;
+      margin-left:40px;
+    }
+  option{
+    align-items: center;
+    justify-content: center;
+    text-align:center;
   }
   div#corpo-form-Cad{
     /*background-color: rgb(43, 43, 97);*/
     width: 420px;
-    margin: 80px auto 0px auto;
+    margin: 0px auto 0px auto;
   }
   div#corpo-form h1,div#corpo-form-Cad h1{
     text-align: center;
@@ -57,19 +120,26 @@
     background-color: #FF0066;
     border: none;
     cursor: pointer;
-    margin-left: 30px;
+    margin-left: 95px;
+    color: white;
+    height: 55px;
+    width: 250px;
   }
   ::-webkit-input-placeholder{
-    color: #fff;
+    color: black;
+    text-align: center;
   }
   :-moz-placeholder{
-    color: #fff;
+    color: black;
+    text-align: center;
   }
   ::-moz-placeholder{
-    color: #fff;
+    color: black;
+    text-align: center;
   }
   :-ms-input-placeholder{
-    color:#fff;
+    color:black;
+    text-align: center;
   }
   div#msg-sucesso{
     width: 400px;
@@ -85,21 +155,43 @@
     background-color:rgba(255, 128, 114, 0.3);
     border: 1px solid rgb(165, 42, 42);
 }
-#tag{
+#tipo{
     left: 50%; 
-    margin: -210px 0 0 -210px; 
+    margin: -210px 0 0 -195px; 
     padding:10px;
     position: absolute; 
-    top: 250px;
+    top: 420px;
+    width:320px;
   }
+
 #btn{
   left: 50%; 
-  margin: -130px 0 0 -210px; 
+  margin: -130px 0 0 -160px; 
   padding:10px;
   position: absolute; 
-  top: 250px;
-  margin-left:-200px;
+  top: 420px;
+
 }
 #bd-text{
   margin-bottom: 50px;
+}
+#logout{
+  margin-left: 800px;
+  font-size:16pt;
+  height: 40px;
+  width: 200px;
+}
+
+#logoutTelaPrincipal{
+ font-size:18pt;
+  height: 40px;
+  width: 200px;
+  margin-left: 95px;
+}
+#pesquisa{
+  margin-left:-70px;
+}
+#pagBuscar{
+  margin-left:0px;
+  width: 100px;
 }

@@ -27,12 +27,14 @@ $user_data = check_login($con);
 	echo "<h2>" . $row['use_name'] . " "."seu nivel é " . $row['nivel'] . "!</h2> <br>";
 	if ($row['nivel'] == '5' || $row['nivel'] == '3' || $row['nivel'] == '2'){
 		?>
-	<h1 id="pesquisa">Pesquisa equipamentos</h1>
+	<h1 id="pesquisa">Pesquisa manutencao</h1>
+	<br><br><br><br>
+	<!--
 	<form action="pesquisa.php" method="GET">
 		<input type="text" id="tipo" name="tipo"  placeholder="Insira o tipo do equipamento">
 		<input id="btn" type="submit" value="Buscar"><br>
 		<br><br><br><br><br><br><br><br>
-	</form>
+	</form> -->
 	<?php
 	if (isset($_SESSION['msg'])) {
 		echo $_SESSION['msg'];
@@ -49,25 +51,27 @@ $user_data = check_login($con);
 	//calcular o inicio visualização
 	$inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
 
-	$result_equipamentos = "SELECT equipamentos.* FROM equipamentos LIMIT $inicio, $qnt_result_pg";
-	$resultado_equipamentos = mysqli_query($con, $result_equipamentos);
-	while ($row_equipamentos = mysqli_fetch_assoc($resultado_equipamentos)) {
+	$result_manutencao = "SELECT `cadastrarequipamentos`.` manutencao`.* FROM `cadastrarequipamentos`.` manutencao` LIMIT $inicio, $qnt_result_pg";
+	$resultado_manutencao = mysqli_query($con, $result_manutencao);
+	while ($row_manutencao = mysqli_fetch_assoc($resultado_manutencao)) {
 		echo "<br>";
-		echo "ID: " ."<b>" . $row_equipamentos['id'] . "</b><br>";
-		echo "Nome: " ."<b>" . $row_equipamentos['tecnicos'] . "</b><br>";
-		echo "Patrimonio: " ."<b>" . $row_equipamentos['patrimonio'] . "</b><br>";
-		echo "Número de Série: " ."<b>" . $row_equipamentos['numeroSerie']. "</b><br>";
-		echo "Equipamento: " ."<b>" . $row_equipamentos['nome'] . "</b><br>";
-		echo "Local: " ."<b>" . $row_equipamentos['lugar'] . "</b><br>";
-		echo "tipo: " ."<b>" . $row_equipamentos['tipo'] . "</b><br>";
-		echo "finalidade: " ."<b>" . $row_equipamentos['finalidade'] . "</b><br>";
-		echo "Data da Compra: " ."<b>" . $row_equipamentos['dataCompra'] . "</b><br><br><hr>";
-		echo "<a id=pagBuscar href='editarEquipamentos.php?id=" . $row_equipamentos['id'] . "'>Editar</a>";
-		echo "<a id=pagBuscar href='apagarEquipamentos.php?id=" . $row_equipamentos['id'] . "'>Apagar</a><hr>";
+		echo "Ordem serviço número: "."<b>" . $row_manutencao['id'] . "</b><br>";
+		echo "Solicitante: " ."<b>" . $row_manutencao['tecnico'] . "</b><br>";
+		echo "Tipo do Equipamento: " ."<b>" . $row_manutencao['tipo'] . "</b><br>";
+		echo "Peça Trocada: " ."<b>" . $row_manutencao['pecaTrocada']. "</b><br>";
+		echo "Quem trocou a peça: " ."<b>" . $row_manutencao['quemTrocouPeca'] . "</b><br>";
+		echo "Observação: " ."<b>" . $row_manutencao['OBS'] . "</b><br>";
+		echo "Defeito: " ."<b>" . $row_manutencao['defeito'] . "</b><br>";
+		echo "Pendente?: " ."<b>" . $row_manutencao['pendente'] . "</b><br>";
+		echo "Data de Abertura: " ."<b>" . $row_manutencao['dataAbertura'] . "</b><br>";
+		echo "Encerrado?: " ."<b>" . $row_manutencao['encerrado'] . "</b><br>";
+		echo "Data de Encerramento: " ."<b>" . $row_manutencao['dataEncerrada'] . "</b><br><br> <hr>";
+		echo "<a id=pagBuscar href='editarManutencao.php?id=" . $row_manutencao['id'] . "'>Editar</a>";
+		echo "<a id=pagBuscar href='apagarManutencao.php?id=" . $row_manutencao['id'] . "'>Apagar</a><hr>";
 	}
 
 	//Paginção - Somar a quantidade de usuários
-	$result_pg = "SELECT COUNT(id) AS num_result FROM equipamentos";
+	$result_pg = "SELECT COUNT(id) AS num_result FROM `cadastrarequipamentos`.` manutencao`";
 	$resultado_pg = mysqli_query($con, $result_pg);
 	$row_pg = mysqli_fetch_assoc($resultado_pg);
 	//echo $row_pg['num_result'];
@@ -76,11 +80,11 @@ $user_data = check_login($con);
 
 	//Limitar os link antes depois
 	$max_links = 2;
-	echo "<a id='logout' href='buscarEquipamentos.php?pagina=1'>Primeira</a> ";
+	echo "<a id='logout' href='buscarManutencao.php?pagina=1'>Primeira</a> ";
 
 	for ($pag_ant = $pagina - $max_links; $pag_ant <= $pagina - 1; $pag_ant++) {
 		if ($pag_ant >= 1) {
-			echo "<a id='logout' href='buscarEquipamentos.php?pagina=$pag_ant'>$pag_ant</a> ";
+			echo "<a id='logout' href='buscarManutencao.php?pagina=$pag_ant'>$pag_ant</a> ";
 		}
 	}
 
@@ -88,11 +92,11 @@ $user_data = check_login($con);
 
 	for ($pag_dep = $pagina + 1; $pag_dep <= $pagina + $max_links; $pag_dep++) {
 		if ($pag_dep <= $quantidade_pg) {
-			echo "<a id='logout' href='buscarEquipamentos.php?pagina=$pag_dep'>$pag_dep</a> ";
+			echo "<a id='logout' href='buscarManutencao.php?pagina=$pag_dep'>$pag_dep</a> ";
 		}
 	}
 
-	echo "<a id='logout' href='buscarEquipamentos.php?pagina=$quantidade_pg'>Ultima</a>";
+	echo "<a id='logout' href='buscarManutencao.php?pagina=$quantidade_pg'>Ultima</a>";
 	}
 	else if($row['nivel'] == '1') {
 		echo "<h2>" ."Você não pode acessar essa página"."</h2>";

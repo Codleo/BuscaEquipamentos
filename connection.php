@@ -2,7 +2,7 @@
 
 $dbhost = "localhost";
 $dbuser = "root";
-$dbpass = "";
+$dbpass = "Winscp()1";
 $dbname = "cadastrarequipamentos";
 
 if(!$con = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname))
@@ -10,3 +10,4 @@ if(!$con = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname))
 
 	die("failed to connect!");
 }
+	
