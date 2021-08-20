@@ -12,7 +12,7 @@ $tipo = "%" . trim($_GET['tipo']) . "%";
 
 $dbh = new PDO('mysql:host=localhost;dbname=cadastrarequipamentos', 'root', 'Winscp()1');
 
-$sth = $dbh->prepare('SELECT * FROM `equipamentos` WHERE `tipo` LIKE :tipo');
+$sth = $dbh->prepare('SELECT * FROM `cadastrarequipamentos`.` manutencao` WHERE `tipo` LIKE :tipo');
 $sth->bindParam(':tipo', $tipo, PDO::PARAM_STR);
 $sth->execute();
 
@@ -37,10 +37,14 @@ $resultados = $sth->fetchAll(PDO::FETCH_ASSOC);
 	if (count($resultados)) {
 		foreach ($resultados as $Resultado) {
 	?>
-			<label><b style='color:red;'><?php echo $Resultado['id']; ?></b> - <b style='color:red;'><?php echo $Resultado['tipo']; ?></b>
-			<br>Nome:<b style='color:red;'><?php echo $Resultado['tecnicos']; ?></b><br>Equipamento:<b style='color:red;'><?php echo $Resultado['nome']; ?></b>
-			<br>Patrimonio:<b style='color:red;'><?php echo $Resultado['patrimonio']; ?></b><br>Local:<b style='color:red;'><?php echo $Resultado['lugar']; ?></b><br>Numero de Serie:<b style='color:red;'><?php echo $Resultado['numeroSerie']; ?></b>
-			<br>Data da Compra:<b style='color:red;'><?php echo $Resultado['dataCompra']; ?></b><br>Finalidade:<b style='color:red;'><?php echo $Resultado['finalidade']; ?></b><br> </label>
+			<label>Ordem de Serviço número:<b style='color:red;'><?php echo $Resultado['id']; ?></b><br>Tipo do equipamento:<b style='color:red;'><?php echo $Resultado['tipo']; ?></b>
+			<br>Solicitante:<b style='color:red;'><?php echo $Resultado['tecnico']; ?></b><br>Peça Trocada:<b style='color:red;'><?php echo $Resultado['pecaTrocada']; ?></b>
+			<br>Quem Trocou a peça:<b style='color:red;'><?php echo $Resultado['quemTrocouPeca']; ?></b><br>Observação:<b style='color:red;'><?php echo $Resultado['OBS']; ?></b>
+			<br>Defeito do equipamento:<b style='color:red;'><?php echo $Resultado['defeito']; ?></b><br>Pendente?:<b style='color:red;'><?php echo $Resultado['pendente']; ?></b>
+			<br>Data de abertura:<b style='color:red;'><?php echo $Resultado['dataAbertura']; ?></b><br>Encerrado?:<b style='color:red;'><?php echo $Resultado['encerrado']; ?></b>
+			<br>Data de Encerramento:<b style='color:red;'><?php echo $Resultado['dataEncerrada']; ?></b>
+		
+			</label>
 			<br>
 			<hr>
 		<?php

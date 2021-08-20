@@ -30,43 +30,40 @@ $user_data = check_login($con);
         while ($row = mysqli_fetch_assoc($resultado_usuario)) {
             echo "<h2>Bem vindo " . $row['use_name'] . "<br>seu nivel é " . $row['nivel'] . "!</h2> <br>";
         if ($row['nivel'] == '5'){
-            echo "<a href='cadastrarEquipamentos.php'>Cadastrar Equipamentos</a> <br>
+            echo "
+            <a href='cadastrarManutencao.php'>Cadastrar Ordem de Serviço</a><br>
+            <a href='buscarManutencao.php'>Clique para buscar alguma Ordem de Serviço</a><br>
+            <a href='buscarUsuarios.php'>Clique para buscar algum usuarios</a><br>
             <a href='buscarEquipamentos.php'>Clique para buscar algum equipamento</a> <br>
+            <a href='cadastrarEquipamentos.php'>Cadastrar Equipamentos</a> <br>
             <a href='buscarEquipamentos.php'>Clique para editar algum equipamento</a> <br>
             <a href='tipo.php'>Cadastrar Tipo do equipamento</a><br>
             <a href='tecnicos.php'>Cadastrar Tecnicos do equipamento</a><br>
             <a href='finalidade.php'>Cadastrar Finalidade do equipamento</a><br>
             <a href='lugar.php'>Cadastrar Lugar do equipamento</a><br>
-            <a href='cadastrarManutencao.php'>Cadastrar Ordem de Serviço</a><br>
-            <a href='buscarManutencao.php'>Clique para buscar alguma Ordem de Serviço</a><br>
-            <a href='buscarUsuarios.php'>Clique para buscar algum usuarios</a><br>";
+            ";
         }
         else if($row['nivel'] == '3'){
-        echo"<a href='cadastrarEquipamentos.php'>Cadastrar Equipamentos</a> <br>
+        echo"
+            <a href='cadastrarManutencao.php'>Cadastrar Ordem de Serviço</a><br>
+            <a href='buscarManutencao.php'>Clique para buscar alguma Ordem de Serviço</a><br>
             <a href='buscarEquipamentos.php'>Clique para buscar algum equipamento</a> <br>
+            <a href='cadastrarEquipamentos.php'>Cadastrar Equipamentos</a> <br>
             <a href='buscarEquipamentos.php'>Clique para editar algum equipamento</a> <br>
             <a href='tipo.php'>Cadastrar Tipo do equipamento</a><br>
             <a href='tecnicos.php'>Cadastrar Tecnicos do equipamento</a><br>
             <a href='finalidade.php'>Cadastrar Finalidade do equipamento</a><br>           
             <a href='lugar.php'>Cadastrar Lugar do equipamento</a><br>
-            <a href='cadastrarManutencao.php'>Cadastrar Ordem de Serviço</a><br>
-            <a href='buscarManutencao.php'>Clique para buscar alguma Ordem de Serviço</a><br>";
+            ";
         }
         else if($row['nivel'] == '2'){
-            echo "<a href='cadastrarEquipamentos.php'>Cadastrar Equipamentos</a> <br>
+            echo "
             <a href='buscarEquipamentos.php'>Clique para buscar algum equipamento</a> <br>
-            <a href='buscarEquipamentos.php'>Clique para editar algum equipamento</a> <br>
-            <a href='tipo.php'>Cadastrar Tipo do equipamento</a><br>
-            <a href='tecnicos.php'>Cadastrar Tecnicos do equipamento</a><br>
-            <a href='finalidade.php'>Cadastrar Finalidade do equipamento</a><br>
-            <a href='lugar.php'>Cadastrar Lugar do equipamento</a><br>";
+            <a href='cadastrarEquipamentos.php'>Cadastrar Equipamentos</a> <br>
+            <a href='buscarEquipamentos.php'>Clique para editar algum equipamento</a> <br>";
         }
         else if($row['nivel'] == '1'){
-            echo "<a href='cadastrarEquipamentos.php'>Cadastrar Equipamentos</a> <br>
-            <a href='tipo.php'>Cadastrar Tipo do equipamento</a><br>
-            <a href='tecnicos.php'>Cadastrar Tecnicos do equipamento</a><br>
-            <a href='finalidade.php'>Cadastrar Finalidade do equipamento</a><br>
-            <a href='lugar.php'>Cadastrar Lugar do equipamento</a><br>";
+            echo "<a href='cadastrarEquipamentos.php'>Cadastrar Equipamentos</a> <br>";
         }
     }
         ?>  

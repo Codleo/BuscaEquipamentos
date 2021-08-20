@@ -26,15 +26,7 @@ include("functions.php");
         <h1>Menu</h1>
         <br>
         <a href="cadastrarEquipamentos.php">Cadastrar Equipamentos</a> <br>
-        <a href="buscarEquipamentos.php">Clique para buscar algum equipamento</a> <br>
-        <a href="buscarEquipamentos.php">Clique para editar algum equipamento</a> <br>
-        <a href="tipo.php">Cadastrar Tipo do equipamento</a><br>
-        <a href="tecnicos.php">Cadastrar Tecnicos do equipamento</a><br>
-        <a href="finalidade.php">Cadastrar Finalidade do equipamento</a><br>
-        <a href="lugar.php">Cadastrar Lugar do equipamento</a><br>
-        <a href="cadastrarManutencao.php">Cadastrar Ordem de Serviço</a><br>
-        <a href="buscarManutencao.php">Clique para buscar alguma Ordem de Serviço</a><br>
-        <a href="buscarUsuarios.php">Clique para buscar algum usuarios</a> <br>
+        <a href="buscarEquipamentos.php">Logar</a> <br>
 
         <?php
         if (isset($_SESSION['msg'])) {

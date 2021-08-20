@@ -53,15 +53,15 @@ $user_data = check_login($con);
 	$resultado_equipamentos = mysqli_query($con, $result_equipamentos);
 	while ($row_equipamentos = mysqli_fetch_assoc($resultado_equipamentos)) {
 		echo "<br>";
-		echo "ID: " ."<b>" . $row_equipamentos['id'] . "</b><br>";
-		echo "Nome: " ."<b>" . $row_equipamentos['tecnicos'] . "</b><br>";
-		echo "Patrimonio: " ."<b>" . $row_equipamentos['patrimonio'] . "</b><br>";
-		echo "Número de Série: " ."<b>" . $row_equipamentos['numeroSerie']. "</b><br>";
-		echo "Equipamento: " ."<b>" . $row_equipamentos['nome'] . "</b><br>";
-		echo "Local: " ."<b>" . $row_equipamentos['lugar'] . "</b><br>";
-		echo "tipo: " ."<b>" . $row_equipamentos['tipo'] . "</b><br>";
-		echo "finalidade: " ."<b>" . $row_equipamentos['finalidade'] . "</b><br>";
-		echo "Data da Compra: " ."<b>" . $row_equipamentos['dataCompra'] . "</b><br><br><hr>";
+		echo "ID: " ."<b style='color:red;'>" . $row_equipamentos['id'] . "</b><br>";
+		echo "Nome: " ."<b style='color:red;'>" . $row_equipamentos['tecnicos'] . "</b><br>";
+		echo "Patrimonio: " ."<b style='color:red;'>" . $row_equipamentos['patrimonio'] . "</b><br>";
+		echo "Número de Série: " ."<b style='color:red;'>" . $row_equipamentos['numeroSerie']. "</b><br>";
+		echo "Equipamento: " ."<b style='color:red;'>" . $row_equipamentos['nome'] . "</b><br>";
+		echo "Local: " ."<b style='color:red;'>" . $row_equipamentos['lugar'] . "</b><br>";
+		echo "tipo: " ."<b style='color:red;'>" . $row_equipamentos['tipo'] . "</b><br>";
+		echo "finalidade: " ."<b style='color:red;'>" . $row_equipamentos['finalidade'] . "</b><br>";
+		echo "Data da Compra: " ."<b style='color:red;'>" . $row_equipamentos['dataCompra'] . "</b><br><br><hr>";
 		echo "<a id=pagBuscar href='editarEquipamentos.php?id=" . $row_equipamentos['id'] . "'>Editar</a>";
 		echo "<a id=pagBuscar href='apagarEquipamentos.php?id=" . $row_equipamentos['id'] . "'>Apagar</a><hr>";
 	}

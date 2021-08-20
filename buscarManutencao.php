@@ -24,17 +24,17 @@ $user_data = check_login($con);
 	$result_usuario = "SELECT * from users WHERE use_id = '$id' limit 1";
 	$resultado_usuario = mysqli_query($con, $result_usuario);
 	while ($row = mysqli_fetch_assoc($resultado_usuario)) {
-	echo "<h2>" . $row['use_name'] . " "."seu nivel é " . $row['nivel'] . "!</h2> <br>";
+	echo "<h2 id='nomeComNivel'>" . $row['use_name'] . " "."seu nivel é " . $row['nivel'] . "!</h2> <br>";
 	if ($row['nivel'] == '5' || $row['nivel'] == '3' || $row['nivel'] == '2'){
 		?>
-	<h1 id="pesquisa">Pesquisa manutencao</h1>
+	<h1 id="pesquisa">Pesquisa manutenção</h1>
 	<br><br><br><br>
-	<!--
-	<form action="pesquisa.php" method="GET">
+	
+	<form action="pesquisaManutencao.php" method="GET">
 		<input type="text" id="tipo" name="tipo"  placeholder="Insira o tipo do equipamento">
 		<input id="btn" type="submit" value="Buscar"><br>
 		<br><br><br><br><br><br><br><br>
-	</form> -->
+	</form> 
 	<?php
 	if (isset($_SESSION['msg'])) {
 		echo $_SESSION['msg'];
@@ -55,17 +55,17 @@ $user_data = check_login($con);
 	$resultado_manutencao = mysqli_query($con, $result_manutencao);
 	while ($row_manutencao = mysqli_fetch_assoc($resultado_manutencao)) {
 		echo "<br>";
-		echo "Ordem serviço número: "."<b>" . $row_manutencao['id'] . "</b><br>";
-		echo "Solicitante: " ."<b>" . $row_manutencao['tecnico'] . "</b><br>";
-		echo "Tipo do Equipamento: " ."<b>" . $row_manutencao['tipo'] . "</b><br>";
-		echo "Peça Trocada: " ."<b>" . $row_manutencao['pecaTrocada']. "</b><br>";
-		echo "Quem trocou a peça: " ."<b>" . $row_manutencao['quemTrocouPeca'] . "</b><br>";
-		echo "Observação: " ."<b>" . $row_manutencao['OBS'] . "</b><br>";
-		echo "Defeito: " ."<b>" . $row_manutencao['defeito'] . "</b><br>";
-		echo "Pendente?: " ."<b>" . $row_manutencao['pendente'] . "</b><br>";
-		echo "Data de Abertura: " ."<b>" . $row_manutencao['dataAbertura'] . "</b><br>";
-		echo "Encerrado?: " ."<b>" . $row_manutencao['encerrado'] . "</b><br>";
-		echo "Data de Encerramento: " ."<b>" . $row_manutencao['dataEncerrada'] . "</b><br><br> <hr>";
+		echo "Ordem serviço número: "."<b style='color:red;'>" . $row_manutencao['id'] . "</b><br>";
+		echo "Solicitante: " ."<b style='color:red;'> " . $row_manutencao['tecnico'] . "</b><br>";
+		echo "Tipo do Equipamento: " ."<b style='color:red;'>" . $row_manutencao['tipo'] . "</b><br>";
+		echo "Peça Trocada: " ."<b style='color:red;'>" . $row_manutencao['pecaTrocada']. "</b><br>";
+		echo "Quem trocou a peça: " ."<b style='color:red;'>" . $row_manutencao['quemTrocouPeca'] . "</b><br>";
+		echo "Observação: " ."<b style='color:red;'>" . $row_manutencao['OBS'] . "</b><br>";
+		echo "Defeito do Equipamento: " ."<b style='color:red;'>" . $row_manutencao['defeito'] . "</b><br>";
+		echo "Pendente?: " ."<b style='color:red;'>" . $row_manutencao['pendente'] . "</b><br>";
+		echo "Data de Abertura: " ."<b style='color:red;'>" . $row_manutencao['dataAbertura'] . "</b><br>";
+		echo "Encerrado?: " ."<b style='color:red;'>" . $row_manutencao['encerrado'] . "</b><br>";
+		echo "Data de Encerramento: " ."<b style='color:red;'>" . $row_manutencao['dataEncerrada'] . "</b><br><br> <hr>";
 		echo "<a id=pagBuscar href='editarManutencao.php?id=" . $row_manutencao['id'] . "'>Editar</a>";
 		echo "<a id=pagBuscar href='apagarManutencao.php?id=" . $row_manutencao['id'] . "'>Apagar</a><hr>";
 	}

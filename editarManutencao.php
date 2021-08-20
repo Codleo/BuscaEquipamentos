@@ -71,10 +71,10 @@ $row_manutencao = mysqli_fetch_assoc($resultado_manutencao);
             <option value="<?php echo $row_manutencao['encerrado']; ?>"><?php echo $row_manutencao['encerrado']; ?></option>
                 <option value="Sim">Sim</option>
                 <option value="Nao">Não</option></select>
-            <label for="dataAbertura">Data da Abertura</label><input type="text" name="dataAbertura" value="<?php echo $row_manutencao['dataAbertura']; ?>" id="dataAbertura" class="js-date" placeholder="dd-mm-yyyy" min="01-01-1980" max="31-12-2025" pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}"  maxlength="10"  required>
-            <label for="dataEncerrada">Data da Encerrada</label><input type="text" name="dataEncerrada" value="<?php echo $row_manutencao['dataEncerrada']; ?>"  id="dataEncerrada" class="js-data" placeholder="dd-mm-yyyy" min="01-01-1980" max="31-12-2025" pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}"  maxlength="10"  required>
+            <label for="dataAbertura">Data de Abertura</label><input type="text" name="dataAbertura" value="<?php echo $row_manutencao['dataAbertura']; ?>" id="dataAbertura" class="js-date" placeholder="dd-mm-yyyy" min="01-01-1980" max="31-12-2025" pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}"  maxlength="10"  required>
+            <label for="dataEncerrada">Data de Encerramento</label><input type="text" name="dataEncerrada" value="<?php echo $row_manutencao['dataEncerrada']; ?>"  id="dataEncerrada" class="js-data" placeholder="dd-mm-yyyy" min="01-01-1980" max="31-12-2025" pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}"  maxlength="10"  required>
 			
-            <label for="quemTrocouPeca">quem Trocou a Peça</label> <select name="quemTrocouPeca" id="quemTrocouPeca" required>
+            <label for="quemTrocouPeca">Quem Trocou a Peça</label> <select name="quemTrocouPeca" id="quemTrocouPeca" required>
             <option value="<?php echo $row_manutencao['quemTrocouPeca']; ?>"><?php echo $row_manutencao['quemTrocouPeca']; ?></option>
 				<?php while ($rows_quemTrocouPeca = mysqli_fetch_array($resultado_quemTrocouPeca)) :; ?>
 					<option value="<?php echo $rows_quemTrocouPeca[1]; ?>"><?php echo $rows_quemTrocouPeca[1]; ?></option>
