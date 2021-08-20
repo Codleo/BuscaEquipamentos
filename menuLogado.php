@@ -32,11 +32,11 @@ $user_data = check_login($con);
         if ($row['nivel'] == '5'){
             echo "
             <a href='cadastrarManutencao.php'>Cadastrar Ordem de Serviço</a><br>
-            <a href='buscarManutencao.php'>Clique para buscar alguma Ordem de Serviço</a><br>
-            <a href='buscarUsuarios.php'>Clique para buscar algum usuarios</a><br>
-            <a href='buscarEquipamentos.php'>Clique para buscar algum equipamento</a> <br>
+            <a href='buscarManutencao.php'>Buscar alguma Ordem de Serviço</a><br>
+            <a href='buscarUsuarios.php'> Buscar algum usuarios</a><br>
+            <a href='buscarEquipamentos.php'>Buscar algum equipamento</a> <br>
             <a href='cadastrarEquipamentos.php'>Cadastrar Equipamentos</a> <br>
-            <a href='buscarEquipamentos.php'>Clique para editar algum equipamento</a> <br>
+            <a href='buscarEquipamentos.php'> Editar algum equipamento</a> <br>
             <a href='tipo.php'>Cadastrar Tipo do equipamento</a><br>
             <a href='tecnicos.php'>Cadastrar Tecnicos do equipamento</a><br>
             <a href='finalidade.php'>Cadastrar Finalidade do equipamento</a><br>
@@ -46,10 +46,10 @@ $user_data = check_login($con);
         else if($row['nivel'] == '3'){
         echo"
             <a href='cadastrarManutencao.php'>Cadastrar Ordem de Serviço</a><br>
-            <a href='buscarManutencao.php'>Clique para buscar alguma Ordem de Serviço</a><br>
-            <a href='buscarEquipamentos.php'>Clique para buscar algum equipamento</a> <br>
+            <a href='buscarManutencao.php'>Buscar alguma Ordem de Serviço</a><br>
+            <a href='buscarEquipamentos.php'>Buscar algum equipamento</a> <br>
             <a href='cadastrarEquipamentos.php'>Cadastrar Equipamentos</a> <br>
-            <a href='buscarEquipamentos.php'>Clique para editar algum equipamento</a> <br>
+            <a href='buscarEquipamentos.php'>Editar algum equipamento</a> <br>
             <a href='tipo.php'>Cadastrar Tipo do equipamento</a><br>
             <a href='tecnicos.php'>Cadastrar Tecnicos do equipamento</a><br>
             <a href='finalidade.php'>Cadastrar Finalidade do equipamento</a><br>           
