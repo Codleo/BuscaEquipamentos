@@ -32,11 +32,11 @@ if($use_name == "celso" || $use_name == "Celso") {
                 $_SESSION['msg'] = "<p style='color:red;'>Usuário não foi cadastrado com sucesso</p>";
                 header("Location: signup.php");
                 }
-         } else {
-        echo "A senha não é igual!";
+        } else {
+        echo "<p style='color:red;'>A senha não é igual!</p>";
         }
         }else {
-            echo "Por favor entre com dados validos!";
+            echo "<p style='color:red;'>Por favor entre com dados validos!</p>";
         }
     
     

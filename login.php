@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             }
         }        
     } else {
-        echo "Usuario ou senha errada!";
+        echo "<p style='color:red;'> Senha ou usuários incorreto!</p>";
     }
 }
 
