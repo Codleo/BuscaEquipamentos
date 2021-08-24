@@ -5,7 +5,7 @@ include("functions.php");
 /*
         if ($user_data = check_login($con)) {
         $result_usuario = "SELECT use_name,nivel FROM users ";
-         $resultado_usuario = mysqli_query($con, $result_usuario);
+        $resultado_usuario = mysqli_query($con, $result_usuario);
         echo "Bem vindo <b>" . $resultado_usuario['use_name'] . "</b> Seu nível é <b>" . $resultado_usuario['nivel'] . "</b> nesse sistema!";
         }
         */

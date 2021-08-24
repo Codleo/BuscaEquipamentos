@@ -24,7 +24,7 @@ $user_data = check_login($con);
 	$result_usuario = "SELECT * from users WHERE use_id = '$id' limit 1";
 	$resultado_usuario = mysqli_query($con, $result_usuario);
 	while ($row = mysqli_fetch_assoc($resultado_usuario)) {
-	echo "<h2>" . $row['use_name'] . " "."seu nivel é " . $row['nivel'] . "!</h2> <br>";
+	echo "<h2 id='nomeComNivel'>" . $row['use_name'] . " "."seu nivel é " . $row['nivel'] . "!</h2> <br>";
 	if ($row['nivel'] == '5' || $row['nivel'] == '3' || $row['nivel'] == '2'){
 		?>
 	<h1 id="pesquisa">Pesquisa equipamentos</h1>

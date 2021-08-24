@@ -28,7 +28,7 @@ $user_data = check_login($con);
 	$result_usuario = "SELECT * from users WHERE use_id = '$id' limit 1";
 	$resultado_usuario = mysqli_query($con, $result_usuario);
 	while ($row = mysqli_fetch_assoc($resultado_usuario)) {
-	echo "<h2>" . $row['use_name'] . " "."seu nivel é " . $row['nivel'] . "!</h2> <br>";
+	echo "<h2 id='nomeComNivel'>" . $row['use_name'] . " "."seu nivel é " . $row['nivel'] . "!</h2> <br>";
 	if ($row['nivel'] == '5'){
 
 	//Receber o número da página
@@ -45,11 +45,11 @@ $user_data = check_login($con);
 	$resultado_usuarios = mysqli_query($con, $result_usuarios);
 	while ($row_usuarios = mysqli_fetch_assoc($resultado_usuarios)) {
 		echo "<br>";
-		echo "ID: " ."<b>" . $row_usuarios['id'] . "</b><br>";
-		echo "Nome: " ."<b>" . $row_usuarios['use_name'] . "</b><br>";
-		echo "Email: " ."<b>" . $row_usuarios['email']. "</b><br>";
-		echo "Nivel: " ."<b>" . $row_usuarios['nivel'] . "</b><br>";
-		echo "Data de modificação: " ."<b>" . $row_usuarios['date_created'] . "</b><br><br><hr>";
+		echo "ID: " ."<b style='color:red;'>" . $row_usuarios['id'] . "</b><br>";
+		echo "Nome: " ."<b style='color:red;'>" . $row_usuarios['use_name'] . "</b><br>";
+		echo "Email: " ."<b style='color:red;'>" . $row_usuarios['email']. "</b><br>";
+		echo "Nivel: " ."<b style='color:red;'>" . $row_usuarios['nivel'] . "</b><br>";
+		echo "Data de modificação: " ."<b style='color:red;'>" . $row_usuarios['date_created'] . "</b><br><br><hr>";
 		echo "<a id=pagBuscar href='editarUsuarios.php?id=" . $row_usuarios['id'] . "'>Editar</a>";
 		echo "<a id=pagBuscar href='apagarUsuarios.php?id=" . $row_usuarios['id'] . "'>Apagar</a><hr>";
 	}

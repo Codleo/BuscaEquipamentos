@@ -14,10 +14,26 @@
     font-size:25px;
     font-weight:bold;
   }
+  h2#h2-left{
+    text-align: center;
+    position: relative;
+    margin-left: -1250px;
+    margin-bottom: 30px;
+    font-size:25px;
+    font-weight:bold;
+  }
+  h2#h2-right{
+    text-align: center;
+    position: relative;
+    margin-left: -185px;
+    margin-bottom: 30px;
+    font-size:25px;
+    font-weight:bold;
+  }
   #nomeComNivel{
     text-align: center;
     position: relative;
-    margin-left: -60px;
+    margin-left: -20px;
     font-size:25px;
     font-weight:bold;
   }
@@ -113,6 +129,22 @@ a:hover, a:active {
     text-align: center;
     padding: 20px;
   }
+  div#corpo-form-Cad-left{
+    margin: 0px auto 0px 190px;
+    margin-top: -570px;
+  }
+    div#corpo-form-Cad-right{
+    margin-left: 1300px; 
+    margin-top: -132px; 
+  }
+  div#corpo-form-Cad-right-nivel3{
+    margin-left: 1300px; 
+    margin-top: -352px; 
+  }
+  div#corpo-form-Cad-left-nivel3{
+    margin: 0px auto 0px 190px;
+    margin-top: -277px;
+  }
   a{
     color: white;
     text-decoration: none;
@@ -163,7 +195,7 @@ a:hover, a:active {
 }
 #tipo{
     left: 50%; 
-    margin: -210px 0 0 -195px; 
+    margin: -210px 0 0 -185px; 
     padding:10px;
     position: absolute; 
     top: 420px;
@@ -172,7 +204,7 @@ a:hover, a:active {
 
 #btn{
   left: 50%; 
-  margin: -130px 0 0 -160px; 
+  margin: -130px 0 0 -150px; 
   padding:10px;
   position: absolute; 
   top: 420px;
@@ -192,12 +224,19 @@ a:hover, a:active {
  font-size:18pt;
   height: 40px;
   width: 200px;
-  margin-left: 95px;
+  margin-left: 75px;
 }
 #pesquisa{
-  margin-left:-70px;
+  margin-left:-40px;
 }
 #pagBuscar{
   margin-left:0px;
   width: 100px;
 }
+#logoutMenu{
+  margin-left: 820px;
+  font-size:16pt;
+  height: 40px;
+  width: 200px;
+  margin-top:400px;
+} 
