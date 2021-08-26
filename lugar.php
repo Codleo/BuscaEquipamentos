@@ -25,7 +25,7 @@ $user_data = check_login($con);
             unset($_SESSION['msg']);
         }
         ?>
-        <form method="POST">
+        <form method="POST" >
             <label for="lugar">Nome do Lugar</label> <input type="text" name="lugar" id="lugar" required="required">
             <input id="button" type="submit" value="Cadastrar">
             <br>
@@ -35,5 +35,20 @@ $user_data = check_login($con);
         </form>
     </div>
 </body>
+<?php
+    $lugar = $_POST['lugar'];
+    if (!empty($lugar)) {
+    $result_lugar = "INSERT INTO lugar (lugar) VALUES ('$lugar')";
+    $resultado_lugar = mysqli_query($con, $result_lugar);
+    } 
+    return false;
 
+if (mysqli_affected_rows($con)) {
+    $_SESSION['msg'] = "<p style='color:green;'>Lugar cadastrado com sucesso</p>";
+    header("Location:menuLogado.php");
+} else {
+    $_SESSION['msg'] = "<p style='color:red;'>Lugar não foi cadastrado com sucesso</p>";
+    header("Location:lugar.php");
+}
+?>
 </html>

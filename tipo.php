@@ -25,7 +25,7 @@ $user_data = check_login($con);
             unset($_SESSION['msg']);
         }
         ?>
-        <form method="POST" action="proc_tipo">
+        <form method="POST" >
             <label for="tipo">Tipo do equipamento</label> <input type="text" name="tipo" id="input_tipo" required="required">
             <input id="button" type="submit" value="Cadastrar">
             <br>
@@ -34,5 +34,21 @@ $user_data = check_login($con);
         </form>
     </div>
 </body>
+<?php
+$tipo = $_POST['tipo'];
+if (!empty($tipo)) {
+    $result_tipo = "INSERT INTO tipo (tipo) VALUES ('$tipo')";
+    $resultado_tipo = mysqli_query($con, $result_tipo);
+}
+return false;
 
+if (mysqli_affected_rows($con)) {
+    $_SESSION['msg'] = "<p style='color:green;'>Tipo cadastrado com sucesso</p>";
+    header("Location:menuLogado.php");
+} else {
+    $_SESSION['msg'] = "<p style='color:red;'>Tipo não foi cadastrado com sucesso</p>";
+    header("Location:tipo.php");
+}
+
+?>
 </html>
